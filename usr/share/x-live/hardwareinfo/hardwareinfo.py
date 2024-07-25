@@ -227,6 +227,12 @@ class LshwTreeWidget(QWidget):
         # Extract the basic system info (before the first *-)
         basic_info = self.lshw.split("*-")[0].strip()
         basic_info = "\n".join(basic_info.splitlines()[1:6])
+        if "lshwReport" in basic_info:
+            workinfo = []
+            for line in basic_info.splitlines():
+                if "lshwReport" not in line:
+                    workinfo.append(line)
+            basic_info = "\n".join(workinfo)
         wrapped_basic_info = self.wrap_text(basic_info, 90)
         self.basic_info_label.setText(wrapped_basic_info)
 
