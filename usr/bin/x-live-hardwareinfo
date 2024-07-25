@@ -1,2 +1,2 @@
 #!/bin/bash
-pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY python3 /usr/share/x-live/hardwareinfo/hardwareinfo.py
+pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY LANG=$LANG LANGUAGE=$LANGUAGE LC_ALL=$LC_ALL python3 /usr/share/x-live/hardwareinfo/hardwareinfo.py
