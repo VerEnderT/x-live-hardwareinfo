@@ -1,0 +1,2 @@
+#!/bin/bash
+pkexec python3 /usr/share/x-live/hardwareinfo/hardwareinfo.py

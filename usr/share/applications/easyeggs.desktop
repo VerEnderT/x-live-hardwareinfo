@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=0.0.1
+Type=Application
+Name=HardwareInfo 
+Exec=x-live-hardwareinfo
+Icon=hardware
+Categories=Utility;
+Keywords=system;hardware;info;
+StartupNotify=true
+X-GNOME-UsesNotifications=true
+GenericName=Hardware Information anzeigen
