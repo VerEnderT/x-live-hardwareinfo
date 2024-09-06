@@ -5,17 +5,12 @@ from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTreeWidget, QTr
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QIcon
 
-
-#####                                      ##
-# abhängigkeiten python3 python3-pyqt5 lshw #
-##                                      #####
-
-
 class LshwTreeWidget(QWidget):
     def __init__(self):
         super().__init__()
 
         self.setWindowTitle("X-Live HardwareInfo")
+        self.setWindowIcon(QIcon("/usr/share/pixmaps/x-live-hardwareinfo.png"))
         faktor = app.desktop().height()/780
         breite = int(750 * faktor)
         hoehe = int(500 * faktor)
@@ -25,7 +20,6 @@ class LshwTreeWidget(QWidget):
         xpos=int(150*faktor)
         ypos=int(170*faktor)
         self.setGeometry(xpos, ypos, breite, hoehe)
-        self.setWindowIcon(QIcon.fromTheme("hardware"))
       
         self.style=str("""
             QWidget {
@@ -164,11 +158,6 @@ class LshwTreeWidget(QWidget):
 
                 item = [path, line.lstrip(), name]  # Include the path, line, and the extracted name
                 items.append(item)
-
-        # Debug: Print all items
-        #print("Items:")
-        #for item in items:
-        #    print(f"Path: {item[0]}, Description: {item[1]}, Name: {item[2]}")
 
         # Populate the QTreeWidget
         self.build_tree_from_items(items)
